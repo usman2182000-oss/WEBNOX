@@ -16,6 +16,12 @@ const projects = [
   { tag: "Commerce / 2026", title: "PizzaMax", text: "A high-converting food ordering platform with real-time cart and checkout flows.", metric: "68% mobile traffic" },
 ];
 
+const highlights = [
+  { title: "Product strategy", text: "Clear priorities, product thinking and digital roadmaps built for growth." },
+  { title: "Fast execution", text: "Lean delivery cycles with design and engineering moving in sync." },
+  { title: "Launch support", text: "Hands-on guidance from the first concept through post-launch refinement." },
+];
+
 function Arrow() {
   return <span className="arrow">↗</span>;
 }
@@ -90,6 +96,29 @@ function App() {
             {["Web Apps", "SaaS", "AI & Automation", "Product Design", "Mobile", "Cloud", "Web Apps", "SaaS"].map((x, i) =>
               <span key={i}>{x} <b>✦</b></span>
             )}
+          </div>
+        </section>
+
+        <section className="impact-band reveal">
+          <div className="impact-grid">
+            <div className="impact-metrics">
+              <div><strong>24+</strong><span>launches</span></div>
+              <div><strong>8</strong><span>industries</span></div>
+              <div><strong>4.9/5</strong><span>ratings</span></div>
+              <div><strong>24/7</strong><span>support</span></div>
+            </div>
+
+            <div className="impact-list">
+              {highlights.map(({ title, text }, index) => (
+                <article key={title} className="highlight-card">
+                  <span className="mini-badge">{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
